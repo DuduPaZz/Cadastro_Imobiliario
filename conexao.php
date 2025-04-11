@@ -1,14 +1,13 @@
 <?php
-
-$host "localhost";
-$usuario "root";
+$servidor = "localhost";
+$usuario = "root";
 $senha = "";
 $banco = "cadastro_imobiliario";
 
-$conexao = mysqli_connect($host, $usuario, $senha, $banco);
+$conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-if (!$conexao->connect_error) {
-    die("Falha na conexão: ". $conexao->connect_error);
+// Verifica se deu erro na conexão
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
 }
-
 ?>
