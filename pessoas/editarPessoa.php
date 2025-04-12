@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
 
     $sql = "SELECT * FROM pessoas WHERE id = $id";
     $resultado = $conexao->query($sql);
-    $pessoa = $resultado->fetch_assoc();
+    $pessoas = $resultado->fetch_assoc();
 } else {
     echo "ID não fornecido.";
     exit;
@@ -29,36 +29,36 @@ if (isset($_GET['id'])) {
         <h1 class="text-center mb-4">Editar Pessoa</h1>
 
         <form action="atualizarBancoPessoas.php" method="POST">
-            <input type="hidden" name="id" value="<?= $pessoa['id'] ?>">
+            <input type="hidden" name="id" value="<?= $pessoas['id'] ?>">
 
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome*</label>
-                <input type="text" name="nome" id="nome" class="form-control" value="<?= $pessoa['nome'] ?>" required>
+                <input type="text" name="nome" id="nome" class="form-control" value="<?= $pessoas['nome'] ?>" required>
             </div>
             <div class="mb-3">
                 <label for="data_nascimento" class="form-label">Data de Nascimento*</label>
-                <input type="date" name="data_nascimento" id="data_nascimento" class="form-control" value="<?= $pessoa['data_nascimento'] ?>" required>
+                <input type="date" name="data_nascimento" id="data_nascimento" class="form-control" value="<?= $pessoas['data_nascimento'] ?>" required>
             </div>
             <div class="mb-3">
                 <label for="cpf" class="form-label">CPF*</label>
-                <input type="text" name="cpf" id="cpf" class="form-control" value="<?= $pessoa['cpf'] ?>" required>
+                <input type="text" name="cpf" id="cpf" class="form-control" value="<?= $pessoas['cpf'] ?>" required>
             </div>
             <div class="mb-3">
                 <label for="sexo" class="form-label">Sexo*</label>
                 <select name="sexo" id="sexo" class="form-select" required>
                     <option value="">Selecione</option>
-                    <option value="M" <?= $pessoa['sexo'] == 'M' ? 'selected' : '' ?>>Masculino</option>
-                    <option value="F" <?= $pessoa['sexo'] == 'F' ? 'selected' : '' ?>>Feminino</option>
-                    <option value="Outros" <?= $pessoa['sexo'] == 'Outros' ? 'selected' : '' ?>>Outros</option>
+                    <option value="M" <?= $pessoas['sexo'] == 'M' ? 'selected' : '' ?>>Masculino</option>
+                    <option value="F" <?= $pessoas['sexo'] == 'F' ? 'selected' : '' ?>>Feminino</option>
+                    <option value="Outros" <?= $pessoas['sexo'] == 'Outros' ? 'selected' : '' ?>>Outros</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" name="telefone" id="telefone" class="form-control" value="<?= $pessoa['telefone'] ?>">
+                <input type="text" name="telefone" id="telefone" class="form-control" value="<?= $pessoas['telefone'] ?>">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" class="form-control" value="<?= $pessoa['email'] ?>">
+                <input type="email" name="email" id="email" class="form-control" value="<?= $pessoas['email'] ?>">
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Salvar Alterações</button>

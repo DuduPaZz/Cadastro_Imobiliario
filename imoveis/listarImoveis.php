@@ -1,8 +1,11 @@
 <?php
 require_once("../conexao.php");
 
-$sql = "SELECT i.*, p.nome as nome_pessoa FROM imoveis i 
-        JOIN pessoas p ON i.id_contribuinte = p.id";
+$sql = "SELECT i.*, p.nome as nome_pessoa 
+        FROM imoveis i 
+        JOIN pessoas p ON i.id_contribuinte = p.id 
+        WHERE i.ativo = 1";
+
 $resultado = $conexao->query($sql);
 ?>
 
@@ -41,8 +44,8 @@ $resultado = $conexao->query($sql);
                 <td><?= $imovel['complemento'] ?></td>
                 <td><?= $imovel['nome_pessoa'] ?></td>
                 <td>
-                    <a href="editar.php?id=<?= $imovel['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="excluir.php?id=<?= $imovel['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+                    <a href="../imoveis/editarImoveis.php?id=<?= $imovel['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="../imoveis/excluirImovel.php?id=<?= $imovel['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
                 </td>
             </tr>
             <?php endwhile; ?>
