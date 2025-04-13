@@ -1,7 +1,7 @@
 Olá, segue o repositório com o desafio.
 
 
-Algumas observações, estou encaminhando o banco de dados num arquivo.sql junto.
+Algumas observações: estou encaminhando o banco de dados num arquivo.sql junto.
 Utilizei o 'Xampp' para programar em um localhost.
 
 Faltou muitas funcionalidades que queria implementar, como uma uma base e uma header para padronizar o site, alguns validadores para organizar os campos e tratar os dados recebidos.
