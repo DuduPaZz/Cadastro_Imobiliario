@@ -24,7 +24,6 @@ if (isset($_POST['id'], $_POST['logradouro'], $_POST['numero'])) {
         exit;
     }
 
-    // Correção aqui: 's' para string, 'i' para inteiro
     $stmt->bind_param("sissii", $logradouro, $numero, $bairro, $complemento, $proprietario, $id);
 
     if ($stmt->execute()) {

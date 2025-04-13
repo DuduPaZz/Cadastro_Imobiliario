@@ -6,7 +6,6 @@ $banco = "cadastro_imobiliario";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-// Verifica se deu erro na conexão
 if ($conexao->connect_error) {
     die("Falha na conexão: " . $conexao->connect_error);
 }

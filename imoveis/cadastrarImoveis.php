@@ -39,7 +39,7 @@ $pessoas = $conexao->query($sql);
             <div class="mb-3">
                 <label for="id_contribuinte" class="form-label">Contribuinte*</label>
                 <select name="id_contribuinte" id="id_contribuinte" class="form-select" required>
-                    <option value="">Selecione</option>
+                    <option value="" disabled selected>Selecione</option>
                     <?php while ($pessoa = $pessoas->fetch_assoc()): ?>
                         <option value="<?= $pessoa['id'] ?>"><?= $pessoa['nome'] ?></option>
                     <?php endwhile; ?>
