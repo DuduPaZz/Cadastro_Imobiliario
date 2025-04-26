@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/04/2025 às 01:55
+-- Tempo de geração: 26/04/2025 às 15:21
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -33,7 +33,8 @@ CREATE TABLE `imoveis` (
   `numero` varchar(10) NOT NULL,
   `bairro` varchar(100) NOT NULL,
   `complemento` varchar(100) DEFAULT NULL,
-  `id_contribuinte` int(11) NOT NULL
+  `id_contribuinte` int(11) NOT NULL,
+  `ativo` tinyint(4) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -49,7 +50,8 @@ CREATE TABLE `pessoas` (
   `cpf` varchar(14) NOT NULL,
   `sexo` enum('M','F','Outros') NOT NULL,
   `telefone` varchar(20) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL
+  `email` varchar(100) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -77,13 +79,13 @@ ALTER TABLE `pessoas`
 -- AUTO_INCREMENT de tabela `imoveis`
 --
 ALTER TABLE `imoveis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `pessoas`
 --
 ALTER TABLE `pessoas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para tabelas despejadas
